@@ -166,13 +166,18 @@ with trypsin digestion disrupting growth-trajectory measurement.
 
 ## Notes and caveats
 
-- **`total_increase` definition.** In code this metric is the *final observed
-  intensity* of each peptide (the intensity at the last time point at which it is
-  detected), which is what the published targets were built from. The manuscript
-  describes it as "final minus initial intensity"; because log1p normalisation
-  requires non-negative values, the final-intensity operationalisation was used.
-  This is the weakest-predicted of the three targets. The wording is worth
-  reconciling between code and manuscript.
+- **`total_increase` definition (code ↔ manuscript).** In code this metric is the
+  *final observed intensity* of each peptide — the intensity at the last time
+  point at which it is detected — which is what the published targets and models
+  were built from (`peptide_ml/targets.py`). The manuscript phrases it as "the
+  difference between final and initial intensity values". These coincide under the
+  experimental baseline, where peptides are absent at T0 (initial intensity ≈ 0),
+  so *final − initial ≈ final intensity*; they differ only for peptides that
+  disappear before the final time point. The non-negative (final-intensity) form
+  is also what makes the log1p normalisation well defined. **Recommended
+  manuscript edit:** describe this metric as "the final observed intensity (net
+  accumulation relative to the zero baseline at T0)" so the text matches the
+  computed quantity. It is the weakest-predicted of the three targets regardless.
 - **Target provenance.** `01_compute_targets.py` reproduces the normalised
   peak-intensity and AUC targets from the raw MS data at r > 0.99; the small
   residual reflects experiment-subset choices in the original analysis. The
@@ -180,3 +185,13 @@ with trypsin digestion disrupting growth-trajectory measurement.
 - **Structure descriptors** require ColabFold and per-peptide `.pdb` files, which
   are not shipped (they are large and infeasible to regenerate for a reviewer);
   the resulting descriptors are included in the canonical table.
+
+---
+
+## License
+
+Source-available under the **PolyForm Strict License 1.0.0** (see `LICENSE`).
+You may view and run this software for noncommercial purposes (e.g. evaluating
+the associated publication), but may **not** redistribute it, modify it, or
+create derivative works. Confirm the copyright holder named in `LICENSE` before
+release.

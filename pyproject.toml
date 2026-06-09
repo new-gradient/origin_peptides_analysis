@@ -8,7 +8,7 @@ version = "1.0.0"
 description = "Machine-learning analysis of abiogenesis peptide-templating data (Spontaneous Evolution of Biology)"
 readme = "README.md"
 requires-python = ">=3.9"
-license = { text = "MIT" }
+license = { text = "PolyForm-Strict-1.0.0" }
 authors = [{ name = "Ewan McMillan" }]
 dependencies = [
     "numpy>=1.26,<2.1",
