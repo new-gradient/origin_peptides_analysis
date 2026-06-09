@@ -1,0 +1,31 @@
+{
+  "n_samples": 6954,
+  "n_features": 119,
+  "best_iteration": 47,
+  "train_rmse": 0.0351621171125385,
+  "train_r2": 0.8515063968361354,
+  "train_pearson": 0.9525315521167568,
+  "val_rmse": 0.08035438749332369,
+  "val_r2": 0.22157048289798442,
+  "val_pearson": 0.47291876051766935,
+  "test_rmse": 0.08483340723074552,
+  "test_r2": 0.18841501394464588,
+  "test_pearson": 0.4401299501133033,
+  "params": {
+    "max_depth": 10,
+    "learning_rate": 0.1,
+    "n_estimators": 2000,
+    "reg_alpha": 0,
+    "reg_lambda": 5.0,
+    "gamma": 0,
+    "subsample": 0.9,
+    "colsample_bytree": 0.8,
+    "min_child_weight": 5,
+    "random_state": 42
+  },
+  "target": "peak_intensity_norm_avg",
+  "mode": "regression",
+  "selection": "val_pearson",
+  "n_sweep_iterations": 500,
+  "timestamp": "20260609_091514"
+}

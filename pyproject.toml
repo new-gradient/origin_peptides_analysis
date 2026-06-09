@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "peptide_ml"
+version = "1.0.0"
+description = "Machine-learning analysis of abiogenesis peptide-templating data (Spontaneous Evolution of Biology)"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Ewan McMillan" }]
+dependencies = [
+    "numpy>=1.26,<2.1",
+    "pandas>=2.0",
+    "scipy>=1.11",
+    "scikit-learn>=1.3",
+    "xgboost>=2.0",
+    "shap>=0.44",
+    "biopython>=1.81",
+    "matplotlib>=3.7",
+    "seaborn>=0.12",
+    "joblib>=1.3",
+    "openpyxl>=3.1",
+    "tqdm>=4.60",
+]
+
+[tool.setuptools]
+packages = ["peptide_ml", "peptide_ml.features", "peptide_ml.features.folding",
+            "peptide_ml.features.non_folding", "peptide_ml._tools"]
+
+[tool.setuptools.package-data]
+"*" = ["*.md", "*.pml"]
+
+[tool.pytest.ini_options]
+markers = ["slow: end-to-end checks that train models (deselect with -m 'not slow')"]
+filterwarnings = ["ignore::DeprecationWarning"]
