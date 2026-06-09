@@ -270,7 +270,7 @@ These features require 3D structure information from protein folding predictions
 
 **Calculate all features with plots:**
 ```bash
-python -m peptide_templating.features.peptide_features \
+python -m peptide_ml.features.peptide_features \
   --csv /path/to/data.csv \
   --pdb-dir /path/to/pdb/structures \
   --output-dir feature_plots \
@@ -279,7 +279,7 @@ python -m peptide_templating.features.peptide_features \
 
 **Load pre-calculated features:**
 ```bash
-python -m peptide_templating.features.peptide_features \
+python -m peptide_ml.features.peptide_features \
   --csv /path/to/data.csv \
   --pdb-dir /path/to/pdb/structures \
   --output-dir feature_plots \
@@ -288,7 +288,7 @@ python -m peptide_templating.features.peptide_features \
 
 **Recalculate only ML features:**
 ```bash
-python -m peptide_templating.features.peptide_features \
+python -m peptide_ml.features.peptide_features \
   --csv /path/to/data.csv \
   --pdb-dir /path/to/pdb/structures \
   --output-dir feature_plots \
@@ -301,7 +301,7 @@ python -m peptide_templating.features.peptide_features \
 ### Python API
 
 ```python
-from peptide_templating.features.peptide_features import PeptideFeatures
+from peptide_ml.features.peptide_features import PeptideFeatures
 
 # Initialize feature calculator
 pf = PeptideFeatures(

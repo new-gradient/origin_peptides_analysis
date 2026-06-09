@@ -187,7 +187,7 @@ class HydrolysisProneBondFeature(BaseFeature):
 #    }
 #
 # 4. Recalculate Features: Rerun the feature calculation pipeline
-#    (e.g., `python -m peptide_templating.features.peptide_features --calc --save ...`)
+#    (e.g., `python -m peptide_ml.features.peptide_features --calc --save ...`)
 #    to generate new `features_raw.csv` and `features_ml.csv` files containing these features.
 #
 # 5. Update Notebook: Ensure your notebook loads the *new* feature file and includes these
